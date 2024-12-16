@@ -5,6 +5,8 @@
 4. Any dead cell with exactly 3 live neighbors becomes alive, by reproduction
 """
 
+import random
+
 # constants
 DEAD = 0
 ALIVE = 1
@@ -24,6 +26,23 @@ def dead_state(width, height):
     ]  # underscores are placeholders
 
 
-print(dead_state(width, height))
+print("dead state: ", dead_state(width, height))
 
-# random_state(width, height): makes a board state that randomly initialize cells from DEAD or Alive
+
+# makes a board state that randomly initialize cells from DEAD or Alive
+def random_state(width, height):
+    # initialize board size
+    state = dead_state(width, height)
+
+    for x in range(0, width):
+        for y in range(0, height):
+            if random.random() >= 0.75:
+                cell_state = DEAD
+            else:
+                cell_state = ALIVE
+            state[x][y] = cell_state
+
+    return state
+
+
+print("random state: ", random_state(width, height))
