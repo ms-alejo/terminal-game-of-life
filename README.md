@@ -3,7 +3,6 @@
 This is a Python implementation of Conway's Game of Life, designed to run in a terminal. Conway's Game of Life is a cellular automaton devised by mathematician John Horton Conway. It is a zero-player game, meaning its evolution is determined by its initial state, requiring no further input from the user.
 
 ## Features
-
 - **Terminal-based animation**: The game runs entirely in the terminal, refreshing the grid to show each generation.
 
 ## Rules of the Game
