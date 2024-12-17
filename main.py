@@ -22,7 +22,7 @@ def random_state(width, height):
 
     for x in range(0, width):
         for y in range(0, height):
-            if random.random() >= 0.5:
+            if random.random() >= 0.70:
                 cell_state = DEAD
             else:
                 cell_state = ALIVE
@@ -42,9 +42,9 @@ def render(board_state):
     symbols = {DEAD: " ", ALIVE: "\u2588"}
 
     lines = []
-    for y in range(0, height):
+    for x in range(0, width):
         line = ""
-        for x in range(0, width):
+        for y in range(0, height):
             line += symbols[board_state[x][y]] * 2
         lines.append(line)
     print("\n".join(lines))
@@ -140,6 +140,6 @@ def run(state):
 
 
 if __name__ == "__main__":
-    # initial_state = random_state(100, 200)
-    initial_state = load_board_state("./toad.txt")
+    # initial_state = random_state(350, 100)
+    initial_state = load_board_state("./gosper_glider_gun.txt")
     run(initial_state)

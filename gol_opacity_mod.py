@@ -50,9 +50,9 @@ def render(board_state):
     height = len(board_state[0])
 
     lines = []
-    for y in range(0, height):
+    for x in range(0, width):
         line = ""
-        for x in range(0, width):
+        for y in range(0, height):
             cell_state = board_state[x][y]
             line += SYMBOLS[cell_state] * 2
         lines.append(line)
