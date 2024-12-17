@@ -20,10 +20,8 @@ Each cell interacts with its eight neighbors. The rules for cell evolution are:
 
 ## Future Enhancements
 - [x] change opacity of older generations
-- [ ] load from file
-- [ ] implement Gosper Glider Gun
-- [ ] merge back to one file and make a CLI for menu
-- [ ] use `curses` for terminal UI 
+- [x] load from file
+- [x] implement Gosper Glider Gun 
 
 ## Acknowledgments
-- John Horton Conway for inventing the Game of Life.
+- [Robert Heaton](https://robertheaton.com/)
