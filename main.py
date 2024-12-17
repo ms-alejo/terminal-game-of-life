@@ -115,6 +115,21 @@ def next_board_state(initial_board_state):
     return new_state
 
 
+def load_board_state(filepath):
+    with open(filepath, "r") as file:
+        lines = [line.rstrip() for line in file.readlines()]
+
+    height = len(lines)
+    width = len(lines[0])
+    board = dead_state(width, height)
+
+    for x, line in enumerate(lines):
+        for y, char in enumerate(line):
+            board[x][y] = int(char)
+
+    return board
+
+
 def run(state):
     next_state = state
 
@@ -125,5 +140,6 @@ def run(state):
 
 
 if __name__ == "__main__":
-    initial_state = random_state(100, 200)
+    # initial_state = random_state(100, 200)
+    initial_state = load_board_state("./toad.txt")
     run(initial_state)
