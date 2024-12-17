@@ -1,6 +1,8 @@
 import random
 import time
 
+# import curses
+
 # constants
 DEAD = 0
 ALIVE = 1
@@ -139,7 +141,33 @@ def run(state):
         time.sleep(0.03)
 
 
+# Run using curses
+# def curses_run(screen, state):
+#     curses.curs_set(0)
+#     screen.nodelay(1)
+#     screen.timeout(30)
+#
+#     next_state = state
+#
+#     while True:
+#         screen.clear()
+#
+#         width = len(state)
+#         height = len(state[0])
+#
+#         for x in range(0, width):
+#             for y in range(0, height):
+#                 if next_state[x][y] == ALIVE:
+#                     screen.addstr(x, y * 2, "\u2588\u2588")
+#
+#         screen.refresh()
+#         next_state = next_board_state(state)
+#
+#         if screen.getch() != -1:
+#             break
+
 if __name__ == "__main__":
-    # initial_state = random_state(350, 100)
-    initial_state = load_board_state("./gosper_glider_gun.txt")
+    initial_state = random_state(100, 200)
+    # initial_state = load_board_state("./gosper_glider_gun.txt")
     run(initial_state)
+    # curses.wrapper(curses_run)
