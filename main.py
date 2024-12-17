@@ -1,4 +1,5 @@
 import random
+import time
 
 # constants
 DEAD = 0
@@ -8,7 +9,7 @@ ALIVE = 1
 # returns a board state specified with width and height and all cells are DEAD
 def dead_state(width, height):
     # underscores are placeholders
-    return [[DEAD for _ in range(width)] for _ in range(height)]
+    return [[DEAD for _ in range(height)] for _ in range(width)]
 
 
 # print("dead state: ", dead_state(width, height))
@@ -85,7 +86,7 @@ def next_cell_value(coordinates, state):
             if state[i][j] == ALIVE:
                 neighbors += 1
 
-    # determine next state
+    # determine next cell state
     if state[x][y] == ALIVE:
         if neighbors <= 1:
             return DEAD
@@ -112,3 +113,17 @@ def next_board_state(initial_board_state):
             new_state[x][y] = next_cell_value((x, y), initial_board_state)
 
     return new_state
+
+
+def run(state):
+    next_state = state
+
+    while True:
+        render(next_state)
+        next_state = next_board_state(next_state)
+        time.sleep(0.03)
+
+
+if __name__ == "__main__":
+    initial_state = random_state(100, 200)
+    run(initial_state)

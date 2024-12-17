@@ -16,6 +16,9 @@ Each cell interacts with its eight neighbors. The rules for cell evolution are:
 3. **Survival**: A live cell with two or three live neighbors survives.
 4. **Reproduction**: A dead cell with exactly three live neighbors becomes a live cell.
 
+## Future Enhancements
+- change opacity of older generations
+
 ## License
 This project is licensed under the MIT License. See `LICENSE` for more information.
 
