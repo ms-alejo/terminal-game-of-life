@@ -19,10 +19,11 @@ Each cell interacts with its eight neighbors. The rules for cell evolution are:
 4. **Reproduction**: A dead cell with exactly three live neighbors becomes a live cell.
 
 ## Future Enhancements
-- change opacity of older generations
-
-## License
-This project is licensed under the MIT License. See `LICENSE` for more information.
+- [x] change opacity of older generations
+- [ ] load from file
+- [ ] implement Gosper Glider Gun
+- [ ] merge back to one file and make a CLI for menu
+- [ ] use `curses` for terminal UI 
 
 ## Acknowledgments
 - John Horton Conway for inventing the Game of Life.
